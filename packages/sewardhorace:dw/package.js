@@ -1,15 +1,16 @@
-
 Package.describe({
   summary:"constants and methods for dw",
   version:"0.1.0",
   name:"sewardhorace:dw",
-  git:"https://github.com/sewardhorace/something.git",
-  // documentation:"README.md"
+  git:"https://github.com/sewardhorace/something.git", //TODO
+  documentation:"README.md", //TODO
 });
 
-Package.on_use(function(api){
-
-  // api.use();
+Package.on_use(function(api) {
+  api.use(
+    ['mongo'],
+    ['client','server']
+  );
   api.add_files(
     ['Gameplay.js'],
     ['client', 'server']

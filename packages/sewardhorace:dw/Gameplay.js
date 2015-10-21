@@ -1160,6 +1160,7 @@ Character.prototype = {
   },
   autoAssignBonds: function() {
     return this.klass.bonds;
+    //TODO should include reference to character ID when assigned
   },
   autoAssignAlignment: function() {
     return this.klass.alignment[0];
