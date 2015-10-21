@@ -12,7 +12,7 @@ Package.on_use(function(api) {
     ['client','server']
   );
   api.add_files(
-    ['Gameplay.js'],
+    ['Character.js'],
     ['client', 'server']
   );
   api.export(
