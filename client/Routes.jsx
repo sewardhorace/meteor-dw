@@ -11,6 +11,7 @@ Routes = React.createClass({
     return (
       <Router history={ReactRouter.lib.BrowserHistory.history}>
         <Route component={App}>
+          <Route path="/" component={Welcome}/>
           <Route path="items" component={Items}/>
         </Route>
       </Router>
