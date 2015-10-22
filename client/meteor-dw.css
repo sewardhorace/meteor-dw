@@ -1,1 +1,36 @@
 /* CSS declarations go here */
+.form-group {
+  padding-bottom: 0px;
+}
+.bold-narigraph {
+  background-color: white;
+  border: 1px solid #99CCFF;
+  padding: 15px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+.bold-narigraph p {
+  word-wrap: break-word;
+   margin-bottom: 20px;
+}
+.bold-narigraph .message {
+  font-size: 18px;
+}
+.narigraph-list{
+  max-height: 300px;
+  overflow: scroll;
+  border: 1px solid #B2B2B2;
+}
+.narigraph-salutation{
+  float:right;
+  display: block;
+  line-height: 0px;
+}
+.narigraph-salutation p{
+  margin-top: -4px;
+}
+.narigraph-salutation small {
+  color: #B2B2B2;
+  padding-left: 10px;
+}
