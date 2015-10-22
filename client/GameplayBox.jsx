@@ -90,7 +90,8 @@ var NarigraphForm = React.createClass({
     Narigraphs.insert({
       text: text,
       charName: "Charlie Chin",
-      createdAt: new Date()
+      createdAt: new Date(),
+      generated: false
     });
     React.findDOMNode(this.refs.text).value = '';
     return;
