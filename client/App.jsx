@@ -2,10 +2,14 @@ App = React.createClass({
   getInitialState: function() {
       return {};
   },
+  logout: function(){
+    console.log('butts');
+    Meteor.logout();
+  },
   render: function () {
     return (
       <div>
-        <small>This will always be here</small>
+        <button onClick={this.logout} type="button" className="btn btn-default">Log Out</button>
         <div>
           {/* This is where our view components will be rendered */}
           {this.props.children}

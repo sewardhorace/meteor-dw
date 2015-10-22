@@ -27,3 +27,4 @@ cosmos:browserify
 npm-container
 twbs:bootstrap
 momentjs:moment
+accounts-password
