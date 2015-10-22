@@ -10,31 +10,6 @@ GameplayBox = React.createClass({
   getInitialState: function() {
     return {};
   },
-  // loadNarigraphsFromServer: function(){
-  //   $.ajax({
-  //     url: this.props.url,
-  //     dataType: 'json',
-  //     cache: false,
-  //     success: function(data) {
-  //       this.setState({data: data});
-  //     }.bind(this),
-  //     error: function(xhr, status, err) {
-  //       console.error(this.props.url, status, err.toString());
-  //     }.bind(this)
-  //   });
-  // },
-
-
-  // snapToBottom: function(scrollingElement){
-  //   setTimeout(function() {
-  //     scrollingElement.scrollTop(scrollingElement[0].scrollHeight);
-  //   }, 1);
-  // },
-  // componentDidUpdate: function(prevProps, prevState) {
-  //   if (this.state.data.length != prevState.data.length){
-  //     this.snapToBottom($('.narigraph-list'));
-  //   }
-  // },
   render: function() {
     return (
       <div>
@@ -47,6 +22,19 @@ GameplayBox = React.createClass({
 });
 
 var NarigraphList = React.createClass({
+  snapToBottom: function(scrollingElement){
+    setTimeout(function() {
+      scrollingElement.scrollTop(scrollingElement[0].scrollHeight);
+    }, 1);
+  }, //TODO this shouldn't be attached to this class
+  componentDidMount: function(){
+    this.snapToBottom($('.narigraph-list'));
+  },
+  componentDidUpdate: function(prevProps, prevState) {
+    if (this.props.narigraphs.length != prevProps.narigraphs.length){
+      this.snapToBottom($('.narigraph-list'));
+    }
+  },
   render: function() {
     var narigraphNodes = this.props.narigraphs.map(function (narigraph) {
       var timestamp = moment(narigraph.createdAt).format("MMM D h:mm a");
@@ -84,15 +72,15 @@ var Narigraph = React.createClass({
 });
 
 var NarigraphForm = React.createClass({
-  // valid: function(){
-  //   // if (window.user.character_name != "") {
-  //   //   return true;
-  //   // } else {
-  //   //   return false;
-  //   // }
-  //   //TODO
-  //   return true;
-  // },
+  valid: function(){
+    // if (window.user.character_name != "") {
+    //   return true;
+    // } else {
+    //   return false;
+    // }
+    //TODO
+    return true;
+  },
   handleSubmit: function(e) {
     e.preventDefault();
     var text = React.findDOMNode(this.refs.text).value.trim();
@@ -111,7 +99,7 @@ var NarigraphForm = React.createClass({
     return (
       <form onSubmit={this.handleSubmit}>
        <div className="form-group">
-        <textarea className="form-control narigraph-textarea" type="text" placeholder="What do you do?" ref="text" rows="3"/>
+        <textarea disabled={!this.valid} className="form-control narigraph-textarea" type="text" placeholder="What do you do?" ref="text" rows="3"/>
         <input type="submit" value="Post" className="form-control btn btn-default"/>
         </div>
       </form>
