@@ -3,8 +3,15 @@ App = React.createClass({
       return {};
   },
   logout: function(){
-    console.log('butts');
-    Meteor.logout();
+    Meteor.logout(
+      function (error) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Logged out");
+        }
+      }
+    );
   },
   render: function () {
     return (

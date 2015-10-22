@@ -9,7 +9,15 @@ SignIn = React.createClass({
     if ( !(username && password) ) {
       return;
     }
-    Meteor.loginWithPassword(username, password);
+    Meteor.loginWithPassword(username, password,
+      function (error) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("logged in as " + username);
+        }
+      }
+    );
     React.findDOMNode(this.refs.username).value = '';
     React.findDOMNode(this.refs.password).value = '';
     return;

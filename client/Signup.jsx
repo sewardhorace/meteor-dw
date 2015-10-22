@@ -11,11 +11,20 @@ Signup = React.createClass({
     if ( !(username && email && password && confirm) || !(password === confirm) ) {
       return;
     }
-    Accounts.createUser({
-      username: username,
-      email: email,
-      password: password
-    });
+    Accounts.createUser(
+      {
+        username: username,
+        email: email,
+        password: password
+      },
+      function (error) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Created Account and logged in as " + username);
+        }
+      }
+    );
     React.findDOMNode(this.refs.username).value = '';
     React.findDOMNode(this.refs.email).value = '';
     React.findDOMNode(this.refs.password).value = '';
