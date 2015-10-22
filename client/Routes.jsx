@@ -13,6 +13,7 @@ Routes = React.createClass({
         <Route component={App}>
           <Route path="/" component={Welcome}/>
           <Route path="items" component={Items}/>
+          <Route path="play" component={GamePage}/>
         </Route>
       </Router>
     );

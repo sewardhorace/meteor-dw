@@ -26,3 +26,4 @@ cosmos:browserify
 
 npm-container
 twbs:bootstrap
+momentjs:moment
