@@ -13,6 +13,7 @@ GamesList = React.createClass({
       var timestamp = moment(game.createdAt).format("MMM D h:mm a");
       var charName = "Ramathorn" //user's character, if has one
       var gm = "GM name" //get the username from the gm._id
+      //TODO Number of players, number of posts, timestamp, date of last activity???
       return (
         <GameListItem
           key={game._id}
