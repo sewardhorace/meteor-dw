@@ -5,7 +5,7 @@ App = React.createClass({
   render: function () {
     return (
       <div>
-        <h1>Meteor-React Router Demo</h1>
+        <small>This will always be here</small>
         <div>
           {/* This is where our view components will be rendered */}
           {this.props.children}

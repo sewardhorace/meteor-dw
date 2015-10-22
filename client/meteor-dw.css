@@ -1,4 +1,10 @@
 /* CSS declarations go here */
+
+/*gameplay page*/
+.small-gutter{
+  margin:-10px;
+}
+
 .form-group {
   padding-bottom: 0px;
 }
@@ -33,4 +39,31 @@
 .narigraph-salutation small {
   color: #B2B2B2;
   padding-left: 10px;
+}
+
+.chat-component h3 {
+  border-bottom: 2px solid black;
+}
+.chat-box {
+  border: 1px solid #999999;
+  border-radius: 3px;
+  margin-bottom: 4px;
+}
+.chat-box p{
+  padding: 6px 6px 0px 6px;
+}
+.chat-box .salutation {
+  display:block;
+  line-height: 0px;
+}
+.chat-box .salutation small{
+  float: right;
+  color: #B2B2B2;
+}
+.chat-box .salutation strong{
+  float: left;
+}
+.chat-list{
+  max-height: 300px;
+  overflow: scroll;
 }

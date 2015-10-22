@@ -6,10 +6,12 @@ GamePage = React.createClass({
     return (
       <div className="container">
         <div className="row">
-          <div className="col-sm-2"></div>
-          <div className="col-sm-8">
-            <h1>Game on, baby</h1>
+          <div className="hidden-xs col-md-1"></div>
+          <div className="col-xs-12 col-sm-8">
             <GameplayBox />
+          </div>
+          <div className="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+            <ChatBox />
           </div>
         </div>
 

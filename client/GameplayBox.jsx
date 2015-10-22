@@ -12,7 +12,7 @@ GameplayBox = React.createClass({
   },
   render: function() {
     return (
-      <div>
+      <div className="small-gutter">
         <h3>Gameplay Log</h3>
         <NarigraphList narigraphs={this.data.narigraphs}/>
         <NarigraphForm />
